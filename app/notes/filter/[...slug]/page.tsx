@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug ?? [];
   const tag = slug[0] ?? 'all';
 
-  const title = `NoteHub- Filter: ${tag}`;
+  const title = `${tag}`;
   const description = `Перегляд нотаток, відфільтрованих за тегом "${tag}".`;
 
   return {
