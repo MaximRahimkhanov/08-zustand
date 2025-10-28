@@ -86,6 +86,7 @@ import { fetchNotes } from '@/lib/api';
 import { useDebouncedCallback } from 'use-debounce';
 import { Tag } from '@/types/note';
 import css from './Note.module.css';
+import Link from 'next/dist/client/link';
 
 interface NotesClientProps {
   tag: Tag | string;
@@ -123,13 +124,14 @@ export default function NotesClient({ tag }: NotesClientProps) {
                 onPageChange={setCurrentPage}
               />
             )}
-            <button className={css.button} onClick={toggleModal}>
-              Create note +
-            </button>
+            <Link href="/notes/action/create">
+              <button className={css.button}>Create note +</button>
+            </Link>
           </header>
           {isModalOpen && (
             <Modal onClose={toggleModal}>
-              <NoteForm onClose={toggleModal} />
+              {/* <NoteForm onClose={toggleModal} /> */}
+              <NoteForm />
             </Modal>
           )}
           {notes.length > 0 && <NoteList notes={notes} />}

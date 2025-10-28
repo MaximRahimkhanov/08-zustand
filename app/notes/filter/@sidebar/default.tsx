@@ -1,8 +1,11 @@
 // app> notes>filter> @idebar > default.tsx
 import Link from 'next/link';
 import css from './SidebarNotes.module.css';
+export interface Tag {
+  name: string;
+}
 
-const tags = ['Work', 'Personal', 'Meeting', 'Shopping', 'Todo'];
+export const tags = ['Work', 'Personal', 'Meeting', 'Shopping', 'Todo'];
 
 export default function SidebarNotes() {
   console.log('render');

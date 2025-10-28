@@ -50,7 +50,10 @@ body {
   margin: 0;
   background-color: #f8f9fa;
 }
-/* main {
-  display: flex;
-  flex-direction: row;
-} */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-roboto), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
