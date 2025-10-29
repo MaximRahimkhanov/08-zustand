@@ -26,23 +26,4 @@ const CreateNote = async () => {
   );
 };
 
-// export default CreateNote;
-// import { useRouter } from 'next/navigation';
-
-// const CreateNote = () => {
-//   const router = useRouter();
-
-//   const handleClose = () => {
-//     router.push('/notes/filter/all');
-//   };
-
-//   return (
-//     <main className={css.main}>
-//       <div className={css.container}>
-//         <h1 className={css.title}>Create note</h1>
-//         <NoteForm onClose={handleClose} />
-//       </div>
-//     </main>
-//   );
-// };
 export default CreateNote;

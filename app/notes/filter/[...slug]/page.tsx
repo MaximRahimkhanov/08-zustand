@@ -7,12 +7,12 @@ import { Metadata } from 'next';
 const queryClient = new QueryClient();
 
 interface Props {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = params.slug ?? [];
-  const tag = slug[0] ?? 'all';
+export async function generateMetadata({ params }: Awaited<Props>): Promise<Metadata> {
+  const { slug } = await params;
+  const tag = slug?.[0] ?? 'all';
 
   const title = `${tag}`;
   const description = `Перегляд нотаток, відфільтрованих за тегом "${tag}".`;
