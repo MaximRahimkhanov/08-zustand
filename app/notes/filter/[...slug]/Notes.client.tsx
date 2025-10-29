@@ -21,7 +21,7 @@ export default function NotesClient({ tag }: NotesClientProps) {
   const normalizedTag = typeof tag === 'string' ? tag : tag.name;
 
   const { data } = useQuery({
-    queryKey: ['notes', { searchText, currentPage, tag }],
+    queryKey: ['notes', { searchText, currentPage, normalizedTag }],
     queryFn: () => fetchNotes({ searchText, page: currentPage, tag: normalizedTag }),
     placeholderData: keepPreviousData,
     refetchOnMount: false,
